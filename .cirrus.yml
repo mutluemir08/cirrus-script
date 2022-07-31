@@ -34,3 +34,4 @@ task:
       - curl -o upload_ccache https://raw.githubusercontent.com/projects-nexus/cirrus-script/main/upload_ccache
       - bash upload_ccache # Ccache uploading script
 
+
