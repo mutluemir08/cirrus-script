@@ -17,7 +17,7 @@ bash ~/git_cookies.sh
 fi
 
 # Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b ten -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b ten 
 
 # local manifest
 git clone --depth=1 https://github.com/Headache01/local_manifest.git -b havoc_q .repo/local_manifests
