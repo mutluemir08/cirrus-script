@@ -1,6 +1,6 @@
 # Normal build steps
 . build/envsetup.sh
-lunch rom_lavender-userdebug
+lunch havoc_GM8_sprout-userdebug
 
 # export variable here
 export TZ=Asia/Kolkata

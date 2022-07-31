@@ -17,15 +17,18 @@ bash ~/git_cookies.sh
 fi
 
 # Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/ROM/android_manifest -b 10 -g default,-mips,-darwin,-notdefault
-
-# Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b ten -g default,-mips,-darwin,-notdefault
 
 # local manifest
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/device_xiaomi_lavender -b x device/xiaomi/lavender
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/vendor_xiaomi_lavender -b x vendor/xiaomi/lavender
-git clone --depth=1 https://github.com/$CIRRUS_REPO_OWNER/kernel_xiaomi_lavender -b x kernel/xiaomi/lavender
+git clone --depth=1 https://github.com/Headache01/local_manifest.git -b havoc_q .repo/local_manifests
+
+#remove havoc gapps
+echo "HAVOC GAPPS REMOVE"
+sed -i '97d' /tmp/rom/.repo/manifests/snippets/havoc.xml
+sed -i '131d' /tmp/rom/.repo/manifests/snippets/havoc.xml
+echo "REMOVED"
+# Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 tg "$rom_name source sync completed!
 Total Size: $(du -sh /tmp/rom | cut -d - -f 1 | cut -d / -f 1)
