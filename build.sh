@@ -6,7 +6,7 @@ cd /tmp/rom
 # Normal build steps
 
 . build/envsetup.sh
-lunch havoc_GM8_sprout-userdebug
+lunch havoc_GM8_sprout-user
 
 # export variable here
 export TZ=Asia/Kolkata
