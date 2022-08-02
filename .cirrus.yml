@@ -33,5 +33,7 @@ task:
     upload_ccache_script: # Upload ccache to cloud foreground
       - curl -o upload_ccache https://raw.githubusercontent.com/projects-nexus/cirrus-script/main/upload_ccache
       - bash upload_ccache # Ccache uploading script
+      
+      
 
 
