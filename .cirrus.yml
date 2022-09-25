@@ -9,7 +9,7 @@ env: # Environment variables to pass to all tasks
     git_cookies: "ENCRYPTED[!65e549704be7456fdafd4194999224ff7cec10f5e8fa13c7a10c4605d7299f4f8e1c805e0f0562707e9aeecb5febc7bb!]"
 
 # store information about git here
-    gmail: ismailduyan80@gmail.com
+    gmail: sametsoy234@gmail.com
 
 # ××× Do not edit or touch anything below this ××× #
     user_version: 2 # lets start from 1
